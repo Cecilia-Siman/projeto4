@@ -68,8 +68,8 @@ body {
     height: 100px;
 }
 
-/*@media (max-width: 614px){
-    .card{
-        max-width: 140px;
+@media (max-width: 614px){
+    .cards{
+        flex-direction: column;
     }    
-}*/
+}
