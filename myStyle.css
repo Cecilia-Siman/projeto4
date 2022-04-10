@@ -14,6 +14,40 @@ body {
     background-color: #eef9bf;
 }
 
+.clock {
+    position: fixed;
+    /*background-color: #77b255;*/
+    background-color: #ea596e;
+    border-radius: 10px;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    padding: 20px;
+}
+
+.numbers{
+    color: #CAEECA;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.unit{
+    color: #CAEECA;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
 .container {
     display: flex;
     justify-content: center;
@@ -71,5 +105,19 @@ body {
 @media (max-width: 614px){
     .cards{
         flex-direction: column;
+    }
+
+    .clock{
+        top: unset;
+        bottom: 10px;
+        height: 50px;
+        padding: 10px;
     }    
+    .numbers {
+        font-size: 24px;
+
+    } 
+    .unit {
+        font-size: 16px;
+    }
 }

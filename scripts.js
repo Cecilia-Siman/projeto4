@@ -4,6 +4,15 @@ let foundPair = 0;
 let firstCard;
 let secondCard;
 
+const myInterval = setInterval(clock, 1000);
+
+function clock(){
+    let second = document.querySelector(".numbers").innerHTML;
+    second = Number(second);
+    second +=1;
+    document.querySelector(".numbers").innerHTML = second;
+}
+
 
 while (numCards<4 || numCards>14 || numCards%2!=0){
     numCards =prompt ("Com quantas cartas você quer jogar?");
@@ -48,16 +57,14 @@ function openCard(elemento){
 function checkMatch (card) {
     if (firstCard == null){
         firstCard = card;
-        console.log("first " + firstCard);
     } else {
         secondCard = card;
-        console.log("second "+ secondCard);
         if (firstCard.innerHTML === secondCard.innerHTML){
-            foundPair ++;
-            console.log(foundPair);    
+            foundPair ++;  
             firstCard.removeAttribute("onclick");
             secondCard.removeAttribute("onclick");
             if (foundPair == (numCards/2)-1){
+                clearInterval(myInterval);
                 setTimeout(victory,500);
             } 
         } else{
@@ -91,9 +98,11 @@ function victory(){
         cards[i].removeAttribute("onclick");
 
     }
-    alert(`Você ganhou em ${numClicks} jogadas!`);
+    const totalSeconds = document.querySelector(".numbers").innerHTML;
+    alert(`Você ganhou em ${numClicks} jogadas, em ${totalSeconds} segundos!`);
     const answer = prompt("Jogar novamente?");
     if (answer === "sim"){
         window.location.reload();
     }    
 }
+
