@@ -99,11 +99,7 @@ body {
     height: 100px;
 }
 
-@media (max-width: 614px){
-    .cards{
-        flex-direction: column;
-    }
-
+@media (max-width: 800px){
     .clock{
         top: unset;
         bottom: 10px;
@@ -116,5 +112,14 @@ body {
     } 
     .unit {
         font-size: 16px;
+    }
+    .cards {
+        margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 614px){
+    .cards{
+        flex-direction: column;
     }
 }
